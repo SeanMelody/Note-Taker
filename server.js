@@ -1,4 +1,3 @@
-// console.log("hi!")
 const express = require("express");
 const app = express();
 const PORT = 5003;
@@ -8,6 +7,7 @@ const clientRoutes = require("./routes/clientRoutes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"))
 
 app.use("/api", apiRoutes);
 app.use("/", clientRoutes);
