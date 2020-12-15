@@ -20,6 +20,7 @@ router.get("/notes", (req, res) => {
         if (err) throw err;
         res.send(JSON.parse(data))
     })
+    // getNotes()
 })
 
 
@@ -32,19 +33,28 @@ router.post("/notes", (req, res) => {
         if (err) throw err;
         // res.json(JSON.parse(data));
         const newNote = JSON.parse(data);
-
         newNote.push({
             title: req.body.title,
             text: req.body.text,
         })
 
         // console.log(noteTest)
-        fs.writeFile("./db/db.json", JSON.stringify(noteTest), (err) => {
+        fs.writeFile("./db/db.json", JSON.stringify(newNote), (err) => {
             if (err) throw err;
+            fs.readFile("./db/db.json", "utf8", (err, data) => {
+                if (err) throw err;
+                res.send(JSON.parse(data))
+            })
             return
+
             // res.json({ msg: "successfully added" })
         })
     })
 });
+
+router.delete("/notes", (req, res) => {
+
+
+})
 
 module.exports = router;
