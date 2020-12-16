@@ -11,17 +11,24 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <!-- My CSS Sheet Link -->
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <!-- My Favicon -->
+  <!-- <link rel="icon" type="image/png" href="../assets/images/Favicon.png" /> -->
 </head>
 
 <body>
+  <!-- navbar -->
   <nav class="navbar navbar-dark bg-dark">
+    <!-- note taker that links back to homepage -->
     <a class="navbar-brand" href="/">Note Taker
     </a>
+    <!-- icons for save and new notes -->
     <div class="icons">
+      <!-- savenote icon only shows up when new note added -->
       <i class="fas fa-save text-light save-note"></i>
       <i class="fas fa-pen text-light new-note"></i>
     </div>
   </nav>
+  <!-- Container for the list of Notes -->
   <div class="container-fluid">
     <div class="row">
       <div class="col-4 list-container">
@@ -31,11 +38,16 @@
         </div>
       </div>
       <div class="col-8">
+        <!-- Input spaced for the note and text areas -->
         <input class="note-title" placeholder="Note Title" maxlength="28" type="text">
         <textarea class="note-textarea" placeholder="Note Text"></textarea>
       </div>
     </div>
   </div>
+  <!-- Footer! Copyright and Love -->
+  <footer class="fixed-bottom">
+    <h6>&#169 and &#9829 Sean Melody 2020</h6>
+  </footer>
   <script src="./assets/js/index.js"></script>
 </body>
 
