@@ -80,8 +80,11 @@ const handleNoteDelete = (e) => {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
+
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+
+
 
   if (activeNote.id === noteId) {
     activeNote = {};
@@ -98,6 +101,32 @@ const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
+
+  // console.log(activeNote.title)
+  // console.log(activeNote.text)
+  noteTitle.value = activeNote.title
+  noteText.value = activeNote.text
+  // document.querySelector('.note-title').textContent = activeNote.title
+  // document.querySelector('.note-textarea').textContent = activeNote.text
+
+
+
+  // fetch(`/api/notes:${activeNote.title}`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  // noteTitle.innerHTML = activeNote.title
+  // noteText.innerHTML = activeNote.text
+  // console.log(data)
+  // .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data)
+  //   });
+  // noteTitle.innerHTML = activeNote.title
+  // noteText.innerHTML = activeNote.text
+  // noteTitle.textContent = activeNote.title
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note

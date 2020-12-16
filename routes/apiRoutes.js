@@ -52,9 +52,36 @@ router.post("/notes", (req, res) => {
     })
 });
 
-router.delete("/notes", (req, res) => {
+// Post a past written note to the screen
+
+router.get("/notes:routename", (req, res) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) throw err;
+        const allNotes = JSON.parse(data);
+        const search = req.params.routename;
+        console.log(search)
+        for (let i = 0; i < allNotes.length; i++) {
+            if (allNotes[i] === search) {
+                console.log(allNotes[i])
+                // return res.json(allNotes[i]);
+                // console.log(res.json(allNotes[i]));
+            }
+        }
+        // return res.json({
+        //     msg: "the character you are searching for does not exist",
+        //     error: `attempted route: ${req.params.routename}`,
+        // });
+    });
+});
 
 
+router.delete("/notes/routename", (req, res) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
+        if (err) throw err;
+        const search = req.params.id;
+        console.log(search)
+
+    })
 })
 
 module.exports = router;
