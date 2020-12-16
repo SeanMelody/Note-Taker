@@ -84,13 +84,14 @@ const handleNoteDelete = (e) => {
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
 
-
+  const deleteMe = (JSON.parse(note.parentElement.getAttribute('data-note'))).title
+  console.log(deleteMe)
 
   if (activeNote.id === noteId) {
     activeNote = {};
   }
 
-  deleteNote(noteId).then(() => {
+  deleteNote(deleteMe).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -175,6 +176,7 @@ const renderNoteList = async (notes) => {
       delBtnEl.addEventListener('click', handleNoteDelete);
 
       liEl.append(delBtnEl);
+
     }
 
     return liEl;
