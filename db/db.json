@@ -1,1 +1,6 @@
-[{"title":"Test Title","text":"Test text"},{"title":"sean","text":"sean's test"},{"title":"Sean's","text":"gitfsfabgnawer"},{"title":"note","text":"new"}]
+[
+    {
+        "title": "Test Title",
+        "text": "Test text"
+    }
+]

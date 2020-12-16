@@ -75,15 +75,25 @@ router.post("/notes", (req, res) => {
 // });
 
 
-router.delete("/notes:routename", (req, res) => {
-    fs.readFile("./db/db.json", "utf8", (err, data) => {
-        if (err) throw err;
-        const search = req.params.id;
-        console.log(search)
+router.delete("/notes", (req, res) => {
+    console.log("delete Me")
+    fs.unlink("./db/db.json", (err, data) => {
 
     })
+    // fs.readFile("./db/db.json", "utf8", (err, data) => {
+    //     if (err) throw err;
+    //     const allNotes = JSON.parse(data);
+    //     const search = req.params.routename;
+    //     console.log(search)
+    //     for (let i = 0; i < allNotes.length; i++) {
+    //         if (allNotes[i].routename === search) {
+    //             return res.json(allNotes[i]);
+    //         }
+    //     } return
 
-    fs.writeFile("./db/db.json", JSON.stringify(newNote), (err) => {
+    // })
+
+    fs.writeFile("./db/db.json", JSON.stringify(data), (err) => {
         if (err) throw err;
         fs.readFile("./db/db.json", "utf8", (err, data) => {
             if (err) throw err;
@@ -92,5 +102,7 @@ router.delete("/notes:routename", (req, res) => {
         return
     })
 })
+
+//Unlink
 
 module.exports = router;

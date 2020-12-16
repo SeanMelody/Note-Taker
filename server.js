@@ -1,6 +1,9 @@
+// Require Express
 const express = require("express");
 const app = express();
+// Use port 5003, cause I'm crazy
 const PORT = 5003;
+// require the Api and client routes
 const apiRoutes = require("./routes/apiRoutes");
 const clientRoutes = require("./routes/clientRoutes");
 
