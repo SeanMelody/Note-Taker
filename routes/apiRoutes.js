@@ -81,4 +81,5 @@ router.delete("/notes", (req, res) => {
         } return
     })
 })
+// export so we can use all this data
 module.exports = router;

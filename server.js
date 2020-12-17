@@ -1,8 +1,8 @@
 // Require Express
 const express = require("express");
 const app = express();
-// Use port 5003, cause I'm crazy
-const PORT = 5003;
+// Use Heroku Port, OR port 5005, cause I'm crazy
+const PORT = process.env.PORT || 5005
 // require the Api and client routes
 const apiRoutes = require("./routes/apiRoutes");
 const clientRoutes = require("./routes/clientRoutes");
