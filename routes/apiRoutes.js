@@ -14,7 +14,6 @@ router.get("/notes", (req, res) => {
 })
 
 
-
 // Router Post Request to post the new note written
 router.post("/notes", (req, res) => {
     // fs read the db.json file
@@ -47,26 +46,23 @@ router.post("/notes", (req, res) => {
     })
 });
 
-
+// Router Delete Request to delete the selected note and return new list of notes
 router.delete("/notes", (req, res) => {
     // fs read the db.json file
     fs.readFile("./db/db.json", "utf8", (err, data) => {
         // no errors allowed
         if (err) throw err;
-        // console.log(req.body)
-        // console.log("line 57")
-
+        // Set the note that has been selected to be deleted to a vatiable
         const deleteThis = (req.body)
-        // console.log(deleteThis)
+        // set all notes to a variable, and json parse
         const allNotes = JSON.parse(data);
-        // console.log(allNotes)
-
+        // For loop to loop through the notes!
         for (let i = 0; i < allNotes.length; i++) {
+            // Select the note that is to be deleted
             if (allNotes[i].title === deleteThis.title) {
-                // console.log(deleteThis)
-                //return res.json(allNotes[i]);
+                // Splice that seleteced note out of the array of all notes
                 allNotes.splice(i, 1)
-                // console.log(allNotes)
+                // Write the new file to the db.json file
                 fs.writeFile("./db/db.json", JSON.stringify(allNotes), (err) => {
                     // thrownin at them errors
                     if (err) throw err;
@@ -83,61 +79,6 @@ router.delete("/notes", (req, res) => {
 
             }
         } return
-
-
-        // var filtered = allNotes.filter(function (el) { return el.title != deleteThis; });
-        // console.log(filtered)
-        // title: req.body.title,
-        //     text: req.body.text
-        // const deleteTest = JSON.parse(data);
-        // console.log(deleteTest)
-
-
-        // Write a new db.json file with the new note
-        // fs.writeFile("./db/db.json", JSON.stringify(newNote), (err) => {
-        //     // thrownin at them errors
-        //     if (err) throw err;
-        //     // read the new db.json file
-        //     fs.readFile("./db/db.json", "utf8", (err, data) => {
-        //         // Thowing all them errors
-        //         if (err) throw err;
-        //         // send that Json Parsed Data
-        //         res.send(JSON.parse(data))
-        //     })
-        //     // return the write Function
-        //     return
     })
 })
-// });
-
-// router.delete("/notes", (req, res) => {
-//     console.log("delete Me")
-
-// fs.unlink("./db/db.json", (err, data) => {
-
-// })
-// fs.readFile("./db/db.json", "utf8", (err, data) => {
-//     if (err) throw err;
-//     const allNotes = JSON.parse(data);
-//     const search = req.params.routename;
-//     console.log(search)
-//     for (let i = 0; i < allNotes.length; i++) {
-//         if (allNotes[i].routename === search) {
-//             return res.json(allNotes[i]);
-//         }
-//     } return
-
-// })
-
-// fs.writeFile("./db/db.json", JSON.stringify(data), (err) => {
-//     if (err) throw err;
-//     fs.readFile("./db/db.json", "utf8", (err, data) => {
-//         if (err) throw err;
-//         res.send(JSON.parse(data))
-//     })
-//     return
-// })
-// })
-
-
 module.exports = router;
