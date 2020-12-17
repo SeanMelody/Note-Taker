@@ -27,9 +27,11 @@ Delete a note by pressing the delete icon on the note!
 
 
 Gif Walk Through:
+
 ![Note Taker Walk Through Gif](https://user-images.githubusercontent.com/68625400/102425902-26611000-3fc3-11eb-9b01-28431ef1bbce.gif)
 
 ScreenShot Walk Through:
+
 ![Note-Taker-1](https://user-images.githubusercontent.com/68625400/102425907-282ad380-3fc3-11eb-84f9-8a9e0afc5881.png)
 ![Note-Taker-2](https://user-images.githubusercontent.com/68625400/102425910-28c36a00-3fc3-11eb-9448-6b7839835ff5.png)
 ![Note-Taker-3](https://user-images.githubusercontent.com/68625400/102425913-2a8d2d80-3fc3-11eb-815a-2b8f1f76c06c.png)
