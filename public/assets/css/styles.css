@@ -3,6 +3,16 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(rgb(247, 76, 76), rgb(71, 71, 247), rgb(114, 32, 114));
+}
+
+.navbar-brand, a {
+  color: black
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
 }
 
 /* save note display */
@@ -24,6 +34,7 @@ html, body {
   width: 100%;
   outline: none;
   border: none;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* specifically text area styling */
@@ -44,7 +55,12 @@ html, body {
 
 /* read only titles for before any info is added */
 .note-title:read-only, .note-textarea:read-only {
+  
   color: #757575;
+}
+
+.col-8 {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* list for past notes added */
@@ -53,6 +69,8 @@ html, body {
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid black;
 }
 
 .list-container {
@@ -66,6 +84,7 @@ html, body {
   border-top: none;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* List styling */
